@@ -14,4 +14,8 @@ class Project extends Model
     public function getContent($n_char){
         return (strlen($this->content) > $n_char) ? substr($this->content, 0, $n_char) . '...' : $this->content;
     }
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }

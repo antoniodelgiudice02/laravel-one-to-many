@@ -8,12 +8,27 @@
         <h1>Nuovo Progetto</h1>
         <form action="{{ route('admin.projects.store')}}" method="POST" class='row'>
         @csrf
+
         <div class="mb-3 col-3">
             <label for="title" class="form-label">Title</label>
             <div class="input-group">
                 <input type="text" class="form-control" id="title" aria-describedby="basic-addon3 basic-addon4" name='title'>
             </div>
         </div>
+
+        <div class="mb-3 col-3">
+            <label for="type_id" class="form-label">Tipologia</label>
+            <div class="input-group">
+                <select class="form-select" id='type_id' name='type_id' aria-label="Default select example">
+                    
+                    <option selected class='d-none'>Tipologia</option>
+                    @foreach( $types as $type )
+                        <option  value='{{ $type->id }}'>{{ $type->label }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
         <div class="mb-3 col-3">
             <label for="content" class="form-label">Content</label>
             <div class="input-group">

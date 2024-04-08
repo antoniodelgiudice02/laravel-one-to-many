@@ -15,6 +15,7 @@
             <tr>
                 <th>ID</th>
                 <th>Titolo</th>
+                <th>Tipologia</th>
                 <th>Contenuto</th>
                 <th>Slug</th>
                 <th></th>
@@ -28,6 +29,7 @@
                 <tr>
                     <td>{{ $project->id }}</td>
                     <td>{{ $project->title }}</td>
+                    <td>{{ $project->type->label }}</td>
                     <td>{{ $project->getContent(50) }}</td>
                     <td>{{ $project->slug }}</td>
 
